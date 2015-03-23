@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.13.52" id="XxDmaInvStkStatIpPageDef"
+                Package="Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="process_inventoryOrg" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_subInventory" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_itemCategoryFrom" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_itemCategoryTo" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_itemFrom" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_itemTo" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process_asOnDate" IsQueriable="false"/>
+    </variableIterator>
+    <methodIterator Binds="process.result" DataControl="InvStockStatExpRev_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.InvStockStatExpRev_WL.process_Result" id="processIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+                  IsViewObjectMethod="false" DataControl="InvStockStatExpRev_WL"
+                  InstanceName="data.InvStockStatExpRev_WL"
+                  ReturnName="data.InvStockStatExpRev_WL.methodResults.process_InvStockStatExpRev_WL_process_result">
+      <NamedData NDName="inventoryOrg" NDType="java.lang.String" NDValue="${bindings.process_inventoryOrg}"/>
+      <NamedData NDName="subInventory" NDType="java.lang.String" NDValue="${bindings.process_subInventory}"/>
+      <NamedData NDName="itemCategoryFrom" NDType="java.lang.String" NDValue="${bindings.process_itemCategoryFrom}"/>
+      <NamedData NDName="itemCategoryTo" NDType="java.lang.String" NDValue="${bindings.process_itemCategoryTo}"/>
+      <NamedData NDName="itemFrom" NDType="java.lang.String" NDValue="${bindings.process_itemFrom}"/>
+      <NamedData NDName="itemTo" NDType="java.lang.String" NDValue="${bindings.process_itemTo}"/>
+      <NamedData NDName="asOnDate" NDType="java.lang.String" NDValue="${bindings.process_asOnDate}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="inventoryOrg">
+      <AttrNames>
+        <Item Value="process_inventoryOrg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="subInventory">
+      <AttrNames>
+        <Item Value="process_subInventory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="itemCategoryFrom">
+      <AttrNames>
+        <Item Value="process_itemCategoryFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="itemCategoryTo">
+      <AttrNames>
+        <Item Value="process_itemCategoryTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="itemFrom">
+      <AttrNames>
+        <Item Value="process_itemFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="itemTo">
+      <AttrNames>
+        <Item Value="process_itemTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="asOnDate">
+      <AttrNames>
+        <Item Value="process_asOnDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
