@@ -18,12 +18,7 @@
   </element>
   <complexType name="GroupByType">
     <sequence>
-      <element name="groupByClause1" type="string"/>
-      <element name="groupByClause2" type="string"/>
-      <element name="groupByClause3" type="string"/>
-      <element name="groupByClause4" type="string"/>
-      <element name="groupByClause5" type="string"/>
-      <element name="groupByClause6" type="string"/>
+      <element name="groupByClause" type="string"/>
     </sequence>
   </complexType>
 </schema>

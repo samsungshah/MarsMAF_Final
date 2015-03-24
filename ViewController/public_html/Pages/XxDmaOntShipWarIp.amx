@@ -25,8 +25,8 @@
       </amx:inputText>
       <amx:inputText value="#{bindings.OperatingUnit.inputValue}" label="#{bindings.OperatingUnit.hints.label}"
                      id="it1"/>
-      <amx:selectOneChoice value="#{bindings.ouList.inputValue}" label="#{bindings.ouList.label}" id="soc1">
-        <amx:selectItems value="#{bindings.ouList.items}" id="si1"/>
+      <amx:selectOneChoice value="#{bindings.GroupBy1.inputValue}" label="#{bindings.GroupBy1.label}" id="soc1">
+        <amx:selectItems value="#{bindings.GroupBy1.items}" id="si1"/>
       </amx:selectOneChoice>
       <!-- <amx:inputText value="#{bindings.GroupBy.inputValue}" label="#{bindings.GroupBy.hints.label}" id="it7"/>-->
     </amx:panelFormLayout>
