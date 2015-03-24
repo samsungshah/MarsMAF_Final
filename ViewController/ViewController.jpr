@@ -73,6 +73,12 @@
          <list n="constituent-sets">
             <hash>
                <list n="pattern-filters">
+                  <string v="+BPELShippingReport.xsd"/>
+                  <string v="+bpelshippingreport_client_ep.wsdl"/>
+                  <string v="+BPELProcessFetchWhse.xsd"/>
+                  <string v="+bpelprocessfetchwhse_client_ep.wsdl"/>
+                  <string v="+BPELProcessFetchGroupByLov.xsd"/>
+                  <string v="+bpelprocessfetchgroupbylov_client_ep.wsdl"/>
                   <string v="+BPELProcessSecInv.xsd"/>
                   <string v="+bpelprocesssecinv_client_ep.wsdl"/>
                   <string v="+BPELProcessItemsLov.xsd"/>
