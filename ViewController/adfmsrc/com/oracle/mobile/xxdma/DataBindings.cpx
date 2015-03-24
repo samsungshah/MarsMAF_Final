@@ -30,6 +30,8 @@
     <page id="com_oracle_mobile_xxdma_XxDmaOntShipWarOpPageDef" path="Pages.XxDmaOntShipWarOpPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="ONTShipWarGrpByLov_DC" path="com.oracle.mobile.xxdma.ONTShipWarGrpByLov_DC"/>
+    <dc id="ONTShipWarGrpByLov_WL" path="com.oracle.mobile.xxdma.ONTShipWarGrpByLov_WL"/>
     <dc id="ONTShipWarRpt_WL" path="com.oracle.mobile.xxdma.ONTShipWarRpt_WL"/>
     <dc id="ItemParamLov_DC" path="com.oracle.mobile.xxdma.ItemParamLov_DC"/>
     <dc id="ItemParamLov_WL" path="com.oracle.mobile.xxdma.ItemParamLov_WL"/>

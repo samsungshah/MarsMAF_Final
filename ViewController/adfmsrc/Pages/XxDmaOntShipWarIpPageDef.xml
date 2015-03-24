@@ -17,6 +17,9 @@
     </variableIterator>
     <methodIterator Binds="process.result" DataControl="ONTShipWarRpt_WL" RangeSize="25"
                     BeanClass="com.oracle.mobile.xxdma.ONTShipWarRpt_WL.process_Result" id="processIterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ONTShipWarGrpByLov_DC" id="ONTShipWarGrpByLov_DCIterator"/>
+    <accessorIterator MasterBinding="ONTShipWarGrpByLov_DCIterator" Binds="ouList" RangeSize="25"
+                      DataControl="ONTShipWarGrpByLov_DC" BeanClass="java.lang.String" id="ouListIterator"/>
   </executables>
   <bindings>
     <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
@@ -84,5 +87,11 @@
         <Item Value="process_GroupBy"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="ouListIterator" ListOperMode="navigation" ListIter="ouListIterator" id="ouList"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="element"/>
+      </AttrNames>
+    </list>
   </bindings>
 </pageDefinition>

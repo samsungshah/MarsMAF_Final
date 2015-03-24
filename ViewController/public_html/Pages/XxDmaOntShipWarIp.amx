@@ -25,7 +25,10 @@
       </amx:inputText>
       <amx:inputText value="#{bindings.OperatingUnit.inputValue}" label="#{bindings.OperatingUnit.hints.label}"
                      id="it1"/>
-      <amx:inputText value="#{bindings.GroupBy.inputValue}" label="#{bindings.GroupBy.hints.label}" id="it7"/>
+      <amx:selectOneChoice value="#{bindings.ouList.inputValue}" label="#{bindings.ouList.label}" id="soc1">
+        <amx:selectItems value="#{bindings.ouList.items}" id="si1"/>
+      </amx:selectOneChoice>
+      <!-- <amx:inputText value="#{bindings.GroupBy.inputValue}" label="#{bindings.GroupBy.hints.label}" id="it7"/>-->
     </amx:panelFormLayout>
     <amx:commandButton actionListener="#{bindings.process.execute}" text="View Report"
                        disabled="#{!bindings.process.enabled}" id="cb2" action="OntShipWarOp"/>

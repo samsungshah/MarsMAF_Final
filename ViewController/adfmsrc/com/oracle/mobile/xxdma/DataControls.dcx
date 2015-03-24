@@ -281,4 +281,17 @@
       </definition>
     </Source>
   </AdapterDataControl>
+  <AdapterDataControl id="ONTShipWarGrpByLov_DC" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.oracle.mobile.xxdma.dc.ONTShipWarGrpByLov_DC"
+                      BeanClass="com.oracle.mobile.xxdma.dc.ONTShipWarGrpByLov_DC"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <bean-definition BeanClass="com.oracle.mobile.xxdma.dc.ONTShipWarGrpByLov_DC"
+                       DataControlHandler="oracle.adf.model.adapter.bean.DataFilterHandler" AccessMode="scrollable"
+                       EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
 </DataControlConfigs>
