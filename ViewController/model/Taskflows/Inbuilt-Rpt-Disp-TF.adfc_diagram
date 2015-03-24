@@ -92,7 +92,7 @@
       <property
          name="fromOutcome">InvStkStatIp</property>
       <property
-         name="sdm:polyPoints">B50,479.0,273.79297,479.0,334.49414,T50</property>
+         name="sdm:polyPoints">B44,475.5,275.58746,479.0,334.49414,T50</property>
    </ControlFlowCase>
    <View
       id="View9">
@@ -117,7 +117,7 @@
       <property
          name="fromOutcome">InvStkStatOp</property>
       <property
-         name="sdm:polyPoints">B50,479.0,447.8054,479.0,489.23465,T50</property>
+         name="sdm:polyPoints">B50,479.0,442.49414,479.0,494.5459,T50</property>
    </ControlFlowCase>
    <View
       id="View11">
@@ -142,6 +142,56 @@
       <property
          name="fromOutcome">test</property>
       <property
-         name="sdm:polyPoints">R30,L60</property>
+         name="sdm:polyPoints">R50,520.0,219.79297,695.0,173.94824,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View13">
+      <property
+         name="activityId">XxDmaOntShipWarIp</property>
+      <property
+         name="page">/Pages/XxDmaOntShipWarIp.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>XxDmaOntShipWarIp&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">403.79883</property>
+      <property
+         name="x">687.35156</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase14"
+      from="View2"
+      to="View13">
+      <property
+         name="fromOutcome">OntShipWarIp</property>
+      <property
+         name="sdm:polyPoints">B56,482.5,273.79297,646.35156,403.44824,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View15">
+      <property
+         name="activityId">XxDmaOntShipWarOp</property>
+      <property
+         name="page">/Pages/XxDmaOntShipWarOp.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>XxDmaOntShipWarOp&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">539.09766</property>
+      <property
+         name="x">686.35156</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase16"
+      from="View13"
+      to="View15">
+      <property
+         name="fromOutcome">OntShipWarOp</property>
+      <property
+         name="sdm:polyPoints">B50,687.35156,457.44824,686.35156,484.74707,T50</property>
    </ControlFlowCase>
 </SDM>

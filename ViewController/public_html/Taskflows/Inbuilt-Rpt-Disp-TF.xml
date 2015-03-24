@@ -43,6 +43,12 @@
     <view id="TestLov">
       <page>/TestLov.amx</page>
     </view>
+    <view id="XxDmaOntShipWarIp">
+      <page>/Pages/XxDmaOntShipWarIp.amx</page>
+    </view>
+    <view id="XxDmaOntShipWarOp">
+      <page>/Pages/XxDmaOntShipWarOp.amx</page>
+    </view>
     <control-flow-rule id="__4">
       <from-activity-id>XxDmaListOfInbuiltRpt</from-activity-id>
       <control-flow-case id="__5">
@@ -57,6 +63,10 @@
         <from-outcome>test</from-outcome>
         <to-activity-id>TestLov</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome>OntShipWarIp</from-outcome>
+        <to-activity-id>XxDmaOntShipWarIp</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__6">
       <from-activity-id>XxDmaPoSpendAnaIp</from-activity-id>
@@ -70,6 +80,13 @@
       <control-flow-case id="__10">
         <from-outcome>InvStkStatOp</from-outcome>
         <to-activity-id>XxDmaInvStkStatOp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id>XxDmaOntShipWarIp</from-activity-id>
+      <control-flow-case id="__15">
+        <from-outcome>OntShipWarOp</from-outcome>
+        <to-activity-id>XxDmaOntShipWarOp</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <page-flow-scope-behavior>

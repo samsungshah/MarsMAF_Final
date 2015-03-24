@@ -15,8 +15,8 @@
                                  action="CstCntRevExpInp"/>
             </amx:listItem>
             <amx:listItem id="li2">
-                <amx:commandLink text="Shipping Order" styleClass="adfmf-listItem-captionText" id="cl2"
-                                 action="OntShipPerOrderIn"/>
+                <amx:commandLink text="Shipping Warehouse Report" styleClass="adfmf-listItem-captionText" id="cl2"
+                                 action="OntShipWarIp"/>
             </amx:listItem>
             <amx:listItem id="li3">
                 <amx:commandLink text="PO Spend Analysis" styleClass="adfmf-listItem-captionText" id="cl3"

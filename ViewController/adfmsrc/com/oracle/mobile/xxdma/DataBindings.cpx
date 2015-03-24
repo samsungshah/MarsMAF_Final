@@ -14,6 +14,8 @@
     <page path="/Pages/XxDmaInvStkStatOp.amx" usageId="com_oracle_mobile_xxdma_XxDmaInvStkStatOpPageDef"/>
     <page path="/Pages/XxDmaListOfCP.amx" usageId="com_oracle_mobile_xxdma_XxDmaListOfCPPageDef"/>
     <page path="/TestLov.amx" usageId="com_oracle_mobile_xxdma_TestLovPageDef"/>
+    <page path="/Pages/XxDmaOntShipWarIp.amx" usageId="com_oracle_mobile_xxdma_XxDmaOntShipWarIpPageDef"/>
+    <page path="/Pages/XxDmaOntShipWarOp.amx" usageId="com_oracle_mobile_xxdma_XxDmaOntShipWarOpPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_mobile_xxdma_XxDmaLoginPageDef" path="Pages.XxDmaLoginPageDef"/>
@@ -24,8 +26,11 @@
     <page id="com_oracle_mobile_xxdma_XxDmaInvStkStatOpPageDef" path="Pages.XxDmaInvStkStatOpPageDef"/>
     <page id="com_oracle_mobile_xxdma_XxDmaListOfCPPageDef" path="Pages.XxDmaListOfCPPageDef"/>
     <page id="com_oracle_mobile_xxdma_TestLovPageDef" path="com.oracle.mobile.xxdma.pageDefs.TestLovPageDef"/>
+    <page id="com_oracle_mobile_xxdma_XxDmaOntShipWarIpPageDef" path="Pages.XxDmaOntShipWarIpPageDef"/>
+    <page id="com_oracle_mobile_xxdma_XxDmaOntShipWarOpPageDef" path="Pages.XxDmaOntShipWarOpPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="ONTShipWarRpt_WL" path="com.oracle.mobile.xxdma.ONTShipWarRpt_WL"/>
     <dc id="ItemParamLov_DC" path="com.oracle.mobile.xxdma.ItemParamLov_DC"/>
     <dc id="ItemParamLov_WL" path="com.oracle.mobile.xxdma.ItemParamLov_WL"/>
     <dc id="SubinvParamLov_DC" path="com.oracle.mobile.xxdma.SubinvParamLov_DC"/>
