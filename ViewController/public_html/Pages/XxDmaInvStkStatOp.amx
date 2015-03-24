@@ -13,10 +13,10 @@
     <dvtm:barChart orientation="horizontal" var="row" value="#{bindings.StockStatusTypeResponse.collectionModel}"
                    id="bc1">
       <amx:facet name="dataStamp">
-        <dvtm:chartDataItem groupId="#{row.partNumber}" group="#{row.partNumber}" value="#{row.extendedCost}"
-                            series="Extended Cost" id="cdi1"/>
-        <dvtm:chartDataItem groupId="#{row.partNumber}" group="#{row.partNumber}" value="#{row.transactionQuantity}"
-                            series="Transaction Quantity" id="cdi2"/>
+        <dvtm:chartDataItem group="#{row.category}" value="#{row.extendedCost}"
+                            series="#{bindings.StockStatusTypeResponse.hints.extendedCost.label}" id="cdi2"/>
+        <dvtm:chartDataItem group="#{row.category}" value="#{row.transactionQuantity}"
+                            series="#{bindings.StockStatusTypeResponse.hints.transactionQuantity.label}" id="cdi1"/>
       </amx:facet>
       <dvtm:legend position="end" id="l1"/>
     </dvtm:barChart>

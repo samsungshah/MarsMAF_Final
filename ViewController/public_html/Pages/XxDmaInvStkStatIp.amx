@@ -11,17 +11,36 @@
     <amx:facet name="secondary">
     </amx:facet>
     <amx:panelFormLayout id="pfl1">
-      <amx:inputText value="#{bindings.inventoryOrg.inputValue}" label="#{bindings.inventoryOrg.hints.label}" id="it5"/>
-      <amx:inputText value="#{bindings.subInventory.inputValue}" label="#{bindings.subInventory.hints.label}" id="it1"/>
-      <amx:inputText value="#{bindings.itemCategoryFrom.inputValue}" label="Category From"
+      <amx:inputText value="MAF"
+                     label="#{bindings.CallingSystemName.hints.label}" id="it10" rendered="false"/>
+      <amx:inputText value="INV"
+                     label="#{bindings.CallingInterfaceName.hints.label}" id="it3" rendered="false"/>
+      <amx:inputText value="Y" label="#{bindings.DebugFlag.hints.label}" id="it13" rendered="false"/>
+      <amx:inputText value="#{pageFlowScope.UserId}" label="#{bindings.UserId.hints.label}" id="it5" rendered="false"/>
+      <amx:inputText value="#{pageFlowScope.RespId}" label="#{bindings.RespId.hints.label}" id="it8" rendered="false"/>
+      <amx:inputText value="#{pageFlowScope.ApplnId}" label="#{bindings.RespApplId.hints.label}" id="it7"
+                     rendered="false"/>
+      <amx:inputText value="#{bindings.inventoryOrg.inputValue}" label="#{bindings.inventoryOrg.hints.label}" id="it9"/>
+      <amx:selectOneChoice value="#{bindings.subInventory1.inputValue}" label="Subinventory"
+                           id="soc3">
+        <amx:selectItems value=" " id="si31"/>                   
+        <amx:selectItems value="#{bindings.subInventory1.items}" id="si3"/>
+      </amx:selectOneChoice>
+      <amx:inputText value="#{bindings.itemCategoryFrom.inputValue}" label="#{bindings.itemCategoryFrom.hints.label}"
                      id="it6"/>
-      <amx:inputText value="#{bindings.itemCategoryTo.inputValue}" label="Category To"
-                     id="it4"/>
-      <amx:inputText value="#{bindings.itemFrom.inputValue}" label="#{bindings.itemFrom.hints.label}" id="it3"/>
-      <amx:inputText value="#{bindings.itemTo.inputValue}" label="#{bindings.itemTo.hints.label}" id="it7"/>
-      <amx:inputText value="#{bindings.asOnDate.inputValue}" label="#{bindings.asOnDate.hints.label}" id="it2"/>
+      <amx:inputText value="#{bindings.itemCategoryTo.inputValue}" label="#{bindings.itemCategoryTo.hints.label}"
+                     id="it11"/>
+      <amx:selectOneChoice value="#{bindings.itemFrom1.inputValue}" label="#{bindings.itemFrom1.label}" id="soc1">
+        <amx:selectItems value=" " id="si11"/>
+        <amx:selectItems value="#{bindings.itemFrom1.items}" id="si1"/>
+      </amx:selectOneChoice>
+      <amx:selectOneChoice value="#{bindings.itemTo1.inputValue}" label="#{bindings.itemTo1.label}" id="soc2">
+        <amx:selectItems value=" " id="si21"/>
+        <amx:selectItems value="#{bindings.itemTo1.items}" id="si2"/>
+      </amx:selectOneChoice>
+      <amx:inputText value="#{bindings.asOnDate.inputValue}" label="#{bindings.asOnDate.hints.label}" id="it1"/>
     </amx:panelFormLayout>
-    <amx:commandButton actionListener="#{bindings.process.execute}" text="View Report"
-                       disabled="#{!bindings.process.enabled}" id="cb2" action="InvStkStatOp"/>
+    <amx:commandButton actionListener="#{bindings.process1.execute}" text="View Report"
+                       disabled="#{!bindings.process1.enabled}" id="cb2" action="InvStkStatOp"/>
   </amx:panelPage>
 </amx:view>

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions name="BPELStockStatusByItem" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:documentation>
-    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvStkStatusByItemReport!1.0/BPELStockStatusByItem.wsdl</abstractWSDL>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvStkStatusByItemReport!2.0/BPELStockStatusByItem.wsdl</abstractWSDL>
   </wsdl:documentation>
   <plnk:partnerLinkType name="BPELStockStatusByItem">
     <plnk:role name="BPELStockStatusByItemProvider">
@@ -40,7 +40,7 @@
   </wsdl:binding>
   <wsdl:service name="bpelstockstatusbyitem_client_ep">
     <wsdl:port name="BPELStockStatusByItem_pt" binding="client:BPELStockStatusByItemBinding">
-      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/InvStockStatExpRev_WLService"/>
+      <soap:address location="http://localhost:7101/MARS-ApplicationController-context-root/InvStockStatExpRev_WLService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

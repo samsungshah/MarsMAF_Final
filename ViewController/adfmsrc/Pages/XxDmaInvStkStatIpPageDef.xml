@@ -3,65 +3,155 @@
                 Package="Pages">
   <parameters/>
   <executables>
-    <variableIterator id="variables">
-      <variable Type="java.lang.String" Name="process_inventoryOrg" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process_subInventory" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process_itemCategoryFrom" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process_itemCategoryTo" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process_itemFrom" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process_itemTo" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process_asOnDate" IsQueriable="false"/>
-    </variableIterator>
     <methodIterator Binds="process.result" DataControl="InvStockStatExpRev_WL" RangeSize="25"
                     BeanClass="com.oracle.mobile.xxdma.InvStockStatExpRev_WL.process_Result" id="processIterator"/>
+    <methodIterator Binds="process1.result" DataControl="InvStockStatExpRev_WL" RangeSize="25"
+                    BeanClass="com.oracle.mobile.xxdma.InvStockStatExpRev_WL.process_Result" id="process1Iterator"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ItemParamLov_DC" id="ItemParamLov_DCIterator"/>
+    <accessorIterator MasterBinding="ItemParamLov_DCIterator" Binds="ouList" RangeSize="-1"
+                      DataControl="ItemParamLov_DC" BeanClass="java.lang.String" id="ouListIterator"/>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="process1_CallingSystemName" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_CallingInterfaceName" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_DebugFlag" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_UserId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_RespId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_RespApplId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_inventoryOrg" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_subInventory" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_itemCategoryFrom" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_itemCategoryTo" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_itemFrom" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_itemTo" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_asOnDate" IsQueriable="false"/>
+    </variableIterator>
+    <iterator Binds="root" RangeSize="25" DataControl="SubinvParamLov_DC" id="SubinvParamLov_DCIterator"/>
+    <accessorIterator id="ouListIterator1" MasterBinding="SubinvParamLov_DCIterator" Binds="ouList" RangeSize="-1"
+                      DataControl="SubinvParamLov_DC" BeanClass="java.lang.String"/>
   </executables>
   <bindings>
-    <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
+    <methodAction id="process1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
                   IsViewObjectMethod="false" DataControl="InvStockStatExpRev_WL"
                   InstanceName="data.InvStockStatExpRev_WL"
                   ReturnName="data.InvStockStatExpRev_WL.methodResults.process_InvStockStatExpRev_WL_process_result">
-      <NamedData NDName="inventoryOrg" NDType="java.lang.String" NDValue="${bindings.process_inventoryOrg}"/>
-      <NamedData NDName="subInventory" NDType="java.lang.String" NDValue="${bindings.process_subInventory}"/>
-      <NamedData NDName="itemCategoryFrom" NDType="java.lang.String" NDValue="${bindings.process_itemCategoryFrom}"/>
-      <NamedData NDName="itemCategoryTo" NDType="java.lang.String" NDValue="${bindings.process_itemCategoryTo}"/>
-      <NamedData NDName="itemFrom" NDType="java.lang.String" NDValue="${bindings.process_itemFrom}"/>
-      <NamedData NDName="itemTo" NDType="java.lang.String" NDValue="${bindings.process_itemTo}"/>
-      <NamedData NDName="asOnDate" NDType="java.lang.String" NDValue="${bindings.process_asOnDate}"/>
+      <NamedData NDName="CallingSystemName" NDType="java.lang.String" NDValue="${bindings.process1_CallingSystemName}"/>
+      <NamedData NDName="CallingInterfaceName" NDType="java.lang.String"
+                 NDValue="${bindings.process1_CallingInterfaceName}"/>
+      <NamedData NDName="DebugFlag" NDType="java.lang.String" NDValue="${bindings.process1_DebugFlag}"/>
+      <NamedData NDName="UserId" NDType="java.lang.String" NDValue="${bindings.process1_UserId}"/>
+      <NamedData NDName="RespId" NDType="java.lang.String" NDValue="${bindings.process1_RespId}"/>
+      <NamedData NDName="RespApplId" NDType="java.lang.String" NDValue="${bindings.process1_RespApplId}"/>
+      <NamedData NDName="inventoryOrg" NDType="java.lang.String" NDValue="${bindings.process1_inventoryOrg}"/>
+      <NamedData NDName="subInventory" NDType="java.lang.String" NDValue="${bindings.process1_subInventory}"/>
+      <NamedData NDName="itemCategoryFrom" NDType="java.lang.String" NDValue="${bindings.process1_itemCategoryFrom}"/>
+      <NamedData NDName="itemCategoryTo" NDType="java.lang.String" NDValue="${bindings.process1_itemCategoryTo}"/>
+      <NamedData NDName="itemFrom" NDType="java.lang.String" NDValue="${bindings.process1_itemFrom}"/>
+      <NamedData NDName="itemTo" NDType="java.lang.String" NDValue="${bindings.process1_itemTo}"/>
+      <NamedData NDName="asOnDate" NDType="java.lang.String" NDValue="${bindings.process1_asOnDate}"/>
     </methodAction>
-    <attributeValues IterBinding="variables" id="inventoryOrg">
+    <list IterBinding="ouListIterator" ListOperMode="navigation" ListIter="ouListIterator" id="ouList"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
       <AttrNames>
-        <Item Value="process_inventoryOrg"/>
+        <Item Value="element"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="ouListIterator" id="ouList1">
+      <nodeDefinition Name="ouList10">
+        <AttrNames>
+          <Item Value="element"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="variables" id="CallingSystemName">
+      <AttrNames>
+        <Item Value="process1_CallingSystemName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="variables" id="subInventory">
+    <attributeValues IterBinding="variables" id="CallingInterfaceName">
       <AttrNames>
-        <Item Value="process_subInventory"/>
+        <Item Value="process1_CallingInterfaceName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="DebugFlag">
+      <AttrNames>
+        <Item Value="process1_DebugFlag"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="UserId">
+      <AttrNames>
+        <Item Value="process1_UserId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="RespId">
+      <AttrNames>
+        <Item Value="process1_RespId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="RespApplId">
+      <AttrNames>
+        <Item Value="process1_RespApplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="inventoryOrg">
+      <AttrNames>
+        <Item Value="process1_inventoryOrg"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="variables" id="itemCategoryFrom">
       <AttrNames>
-        <Item Value="process_itemCategoryFrom"/>
+        <Item Value="process1_itemCategoryFrom"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="variables" id="itemCategoryTo">
       <AttrNames>
-        <Item Value="process_itemCategoryTo"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="variables" id="itemFrom">
-      <AttrNames>
-        <Item Value="process_itemFrom"/>
+        <Item Value="process1_itemCategoryTo"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="variables" id="itemTo">
       <AttrNames>
-        <Item Value="process_itemTo"/>
+        <Item Value="process1_itemTo"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="variables" id="asOnDate">
       <AttrNames>
-        <Item Value="process_asOnDate"/>
+        <Item Value="process1_asOnDate"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="variables" id="itemFrom1" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="ouListIterator">
+      <AttrNames>
+        <Item Value="process1_itemFrom"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="itemTo1" DTSupportsMRU="true" SelectItemValueMode="ListObject" StaticList="false"
+          ListIter="ouListIterator">
+      <AttrNames>
+        <Item Value="process1_itemTo"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="subInventory1" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="ouListIterator1">
+      <AttrNames>
+        <Item Value="process1_subInventory"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
   </bindings>
 </pageDefinition>

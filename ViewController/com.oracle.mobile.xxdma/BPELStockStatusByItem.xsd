@@ -1,8 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns:ns1="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns:ns1="http://xmlns.oracle.com/XXDMA/XxDmaInvStkStatusByItemReport/BPELStockStatusByItem" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.oracle.com/XXDMA/Common">
   <element name="process">
     <complexType>
       <sequence>
+        <element name="CallingSystemName" type="string"/>
+        <element name="CallingInterfaceName" type="string"/>
+        <element name="DebugFlag" type="string"/>
+        <element name="UserId" type="string"/>
+        <element name="RespId" type="string"/>
+        <element name="RespApplId" type="string"/>
         <element name="inventoryOrg" type="string"/>
         <element name="subInventory" type="string"/>
         <element name="itemCategoryFrom" type="string"/>
@@ -16,8 +22,9 @@
   <element name="processResponse">
     <complexType>
       <sequence>
-        <element name="ReturnMessage" type="string" minOccurs="0" nillable="true"/>
         <element name="StockStatusTypeResponse" type="ns1:StockStatusType" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+        <element name="returnCode" type="string"/>
+        <element name="returnMsg" type="string"/>
       </sequence>
     </complexType>
   </element>
