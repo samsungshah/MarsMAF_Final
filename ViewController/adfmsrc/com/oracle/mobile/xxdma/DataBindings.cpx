@@ -16,6 +16,8 @@
     <page path="/TestLov.amx" usageId="com_oracle_mobile_xxdma_TestLovPageDef"/>
     <page path="/Pages/XxDmaOntShipWarIp.amx" usageId="com_oracle_mobile_xxdma_XxDmaOntShipWarIpPageDef"/>
     <page path="/Pages/XxDmaOntShipWarOp.amx" usageId="com_oracle_mobile_xxdma_XxDmaOntShipWarOpPageDef"/>
+    <page path="/Pages/XxDmaCstCntRevExpIp.amx" usageId="com_oracle_mobile_xxdma_XxDmaCstCntRevExpIpPageDef"/>
+    <page path="/Pages/XxDmaCstCntRevExpOp.amx" usageId="com_oracle_mobile_xxdma_XxDmaCstCntRevExpOpPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_oracle_mobile_xxdma_XxDmaLoginPageDef" path="Pages.XxDmaLoginPageDef"/>
@@ -28,8 +30,14 @@
     <page id="com_oracle_mobile_xxdma_TestLovPageDef" path="com.oracle.mobile.xxdma.pageDefs.TestLovPageDef"/>
     <page id="com_oracle_mobile_xxdma_XxDmaOntShipWarIpPageDef" path="Pages.XxDmaOntShipWarIpPageDef"/>
     <page id="com_oracle_mobile_xxdma_XxDmaOntShipWarOpPageDef" path="Pages.XxDmaOntShipWarOpPageDef"/>
+    <page id="com_oracle_mobile_xxdma_XxDmaCstCntRevExpIpPageDef" path="Pages.XxDmaCstCntRevExpIpPageDef"/>
+    <page id="com_oracle_mobile_xxdma_XxDmaCstCntRevExpOpPageDef" path="Pages.XxDmaCstCntRevExpOpPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
+    <dc id="GlParamLov_DC" path="com.oracle.mobile.xxdma.GlParamLov_DC"/>
+    <dc id="GlParamLov_WL" path="com.oracle.mobile.xxdma.GlParamLov_WL"/>
+    <dc id="GlCostCtrExpRevRpt_WL" path="com.oracle.mobile.xxdma.GlCostCtrExpRevRpt_WL"/>
+    <dc id="InvorgParamLov_DC" path="com.oracle.mobile.xxdma.InvorgParamLov_DC"/>
     <dc id="ONTShipWarGrpByLov_DC" path="com.oracle.mobile.xxdma.ONTShipWarGrpByLov_DC"/>
     <dc id="ONTShipWarGrpByLov_WL" path="com.oracle.mobile.xxdma.ONTShipWarGrpByLov_WL"/>
     <dc id="ONTShipWarRpt_WL" path="com.oracle.mobile.xxdma.ONTShipWarRpt_WL"/>
@@ -37,6 +45,7 @@
     <dc id="ItemParamLov_WL" path="com.oracle.mobile.xxdma.ItemParamLov_WL"/>
     <dc id="SubinvParamLov_DC" path="com.oracle.mobile.xxdma.SubinvParamLov_DC"/>
     <dc id="SubinvParamLov_WL" path="com.oracle.mobile.xxdma.SubinvParamLov_WL"/>
+    <dc id="InvorgParamLov_WL" path="com.oracle.mobile.xxdma.InvorgParamLov_WL"/>
     <dc id="OuParamLov_DC" path="com.oracle.mobile.xxdma.OuParamLov_DC"/>
     <dc id="OuParamLov_WL" path="com.oracle.mobile.xxdma.OuParamLov_WL"/>
     <dc id="ListOfCP_WL" path="com.oracle.mobile.xxdma.ListOfCP_WL"/>

@@ -49,6 +49,12 @@
     <view id="XxDmaOntShipWarOp">
       <page>/Pages/XxDmaOntShipWarOp.amx</page>
     </view>
+    <view id="XxDmaCstCntRevExpIp">
+      <page>/Pages/XxDmaCstCntRevExpIp.amx</page>
+    </view>
+    <view id="XxDmaCstCntRevExpOp">
+      <page>/Pages/XxDmaCstCntRevExpOp.amx</page>
+    </view>
     <control-flow-rule id="__4">
       <from-activity-id>XxDmaListOfInbuiltRpt</from-activity-id>
       <control-flow-case id="__5">
@@ -66,6 +72,10 @@
       <control-flow-case id="__13">
         <from-outcome>OntShipWarIp</from-outcome>
         <to-activity-id>XxDmaOntShipWarIp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome>CstCntRevExpInp</from-outcome>
+        <to-activity-id>XxDmaCstCntRevExpIp</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__6">
@@ -87,6 +97,13 @@
       <control-flow-case id="__15">
         <from-outcome>OntShipWarOp</from-outcome>
         <to-activity-id>XxDmaOntShipWarOp</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__17">
+      <from-activity-id>XxDmaCstCntRevExpIp</from-activity-id>
+      <control-flow-case id="__18">
+        <from-outcome>CstCntRevExpOp</from-outcome>
+        <to-activity-id>XxDmaCstCntRevExpOp</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <page-flow-scope-behavior>

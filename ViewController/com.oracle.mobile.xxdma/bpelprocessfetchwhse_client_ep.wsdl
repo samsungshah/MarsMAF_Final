@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <wsdl:definitions name="BPELProcessFetchWhse" targetNamespace="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:client="http://xmlns.oracle.com/XXDMA/XxDmaInvFetchWhseLov/BPELProcessFetchWhse" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:documentation>
-    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvFetchWhseLov!1.0/BPELProcessFetchWhse.wsdl</abstractWSDL>
+    <abstractWSDL>http://USSLTCSNL3303.solutions.glbsnet.com:8001/soa-infra/services/default/XxDmaInvFetchWhseLov!2.0/BPELProcessFetchWhse.wsdl</abstractWSDL>
   </wsdl:documentation>
   <plnk:partnerLinkType name="BPELProcessFetchWhse">
     <plnk:role name="BPELProcessFetchWhseProvider">
@@ -40,7 +40,7 @@
   </wsdl:binding>
   <wsdl:service name="bpelprocessfetchwhse_client_ep">
     <wsdl:port name="BPELProcessFetchWhse_pt" binding="client:BPELProcessFetchWhseBinding">
-      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/ONTShipWaByWarLov_WLService"/>
+      <soap:address location="http://localhost:7101/MARS-ViewController-context-root/InvorgParamLov_WLService"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

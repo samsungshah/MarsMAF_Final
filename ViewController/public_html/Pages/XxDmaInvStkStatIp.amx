@@ -20,7 +20,10 @@
       <amx:inputText value="#{pageFlowScope.RespId}" label="#{bindings.RespId.hints.label}" id="it8" rendered="false"/>
       <amx:inputText value="#{pageFlowScope.ApplnId}" label="#{bindings.RespApplId.hints.label}" id="it7"
                      rendered="false"/>
-      <amx:inputText value="#{bindings.inventoryOrg.inputValue}" label="#{bindings.inventoryOrg.hints.label}" id="it9"/>
+      <amx:selectOneChoice value="#{bindings.inventoryOrg1.inputValue}" label="Inventory Org"
+                           id="soc4">
+        <amx:selectItems value="#{bindings.inventoryOrg1.items}" id="si4"/>
+      </amx:selectOneChoice>
       <amx:selectOneChoice value="#{bindings.subInventory1.inputValue}" label="Subinventory"
                            id="soc3">
         <amx:selectItems value=" " id="si31"/>                   

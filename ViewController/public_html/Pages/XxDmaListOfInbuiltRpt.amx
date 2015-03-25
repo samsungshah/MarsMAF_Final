@@ -23,7 +23,7 @@
                                  action="PoSpendAna"/>
             </amx:listItem>
             <amx:listItem id="li4">
-                <amx:commandLink text="Inventroy Stock Status By Item" styleClass="adfmf-listItem-captionText" id="cl4"
+                <amx:commandLink text="Inventory Stock Status By Item" styleClass="adfmf-listItem-captionText" id="cl4"
                                  action="InvStkStatIp"/>
             </amx:listItem>
              <amx:listItem id="li5">

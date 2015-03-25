@@ -194,4 +194,54 @@
       <property
          name="sdm:polyPoints">B50,687.35156,457.44824,686.35156,484.74707,T50</property>
    </ControlFlowCase>
+   <View
+      id="View17">
+      <property
+         name="activityId">XxDmaCstCntRevExpIp</property>
+      <property
+         name="page">/Pages/XxDmaCstCntRevExpIp.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>XxDmaCstCntRevExpIp&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">66.74707</property>
+      <property
+         name="x">480.01953</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="View2"
+      to="View17">
+      <property
+         name="fromOutcome">CstCntRevExpInp</property>
+      <property
+         name="sdm:polyPoints">T50,479.0,165.79297,480.01953,120.74707,B50</property>
+   </ControlFlowCase>
+   <View
+      id="View19">
+      <property
+         name="activityId">XxDmaCstCntRevExpOp</property>
+      <property
+         name="page">/Pages/XxDmaCstCntRevExpOp.amx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>XxDmaCstCntRevExpOp&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">66.396484</property>
+      <property
+         name="x">787.01953</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase20"
+      from="View17"
+      to="View19">
+      <property
+         name="fromOutcome">CstCntRevExpOp</property>
+      <property
+         name="sdm:polyPoints">R50,521.01953,66.74707,746.01953,66.0459,L50</property>
+   </ControlFlowCase>
 </SDM>

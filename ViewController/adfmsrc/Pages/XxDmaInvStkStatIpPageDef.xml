@@ -11,12 +11,15 @@
     <accessorIterator MasterBinding="ItemParamLov_DCIterator" Binds="ouList" RangeSize="-1"
                       DataControl="ItemParamLov_DC" BeanClass="java.lang.String" id="ouListIterator"/>
     <variableIterator id="variables">
-      <variable Type="java.lang.String" Name="process1_CallingSystemName" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process1_CallingInterfaceName" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process1_DebugFlag" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process1_UserId" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process1_RespId" IsQueriable="false"/>
-      <variable Type="java.lang.String" Name="process1_RespApplId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="process1_CallingSystemName" IsQueriable="false" DefaultValue="MAF"/>
+      <variable Type="java.lang.String" Name="process1_CallingInterfaceName" IsQueriable="false" DefaultValue="INV"/>
+      <variable Type="java.lang.String" Name="process1_DebugFlag" IsQueriable="false" DefaultValue="Y"/>
+      <variable Type="java.lang.String" Name="process1_UserId" IsQueriable="false"
+                DefaultValue="#{pageFlowScope.UserId}"/>
+      <variable Type="java.lang.String" Name="process1_RespId" IsQueriable="false"
+                DefaultValue="#{pageFlowScope.RespId}"/>
+      <variable Type="java.lang.String" Name="process1_RespApplId" IsQueriable="false"
+                DefaultValue="#{pageFlowScope.ApplnId}"/>
       <variable Type="java.lang.String" Name="process1_inventoryOrg" IsQueriable="false"/>
       <variable Type="java.lang.String" Name="process1_subInventory" IsQueriable="false"/>
       <variable Type="java.lang.String" Name="process1_itemCategoryFrom" IsQueriable="false"/>
@@ -28,6 +31,13 @@
     <iterator Binds="root" RangeSize="25" DataControl="SubinvParamLov_DC" id="SubinvParamLov_DCIterator"/>
     <accessorIterator id="ouListIterator1" MasterBinding="SubinvParamLov_DCIterator" Binds="ouList" RangeSize="-1"
                       DataControl="SubinvParamLov_DC" BeanClass="java.lang.String"/>
+    <iterator Binds="root" RangeSize="25" DataControl="InvorgParamLov_DC" id="InvorgParamLov_DCIterator"/>
+    <accessorIterator id="ouListIterator2" MasterBinding="InvorgParamLov_DCIterator" Binds="ouList" RangeSize="-1"
+                      DataControl="InvorgParamLov_DC" BeanClass="java.lang.String"/>
+    <iterator Binds="root" RangeSize="25" DataControl="GlParamLov_WL" id="GlParamLov_WLIterator"/>
+    <accessorIterator MasterBinding="GlParamLov_WLIterator" Binds="process_parameters" RangeSize="25"
+                      DataControl="GlParamLov_WL" BeanClass="GlParamLov_WL.Types.process"
+                      id="process_parametersIterator"/>
   </executables>
   <bindings>
     <methodAction id="process1" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
@@ -145,6 +155,18 @@
           StaticList="false" ListIter="ouListIterator1">
       <AttrNames>
         <Item Value="process1_subInventory"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="inventoryOrg1" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="ouListIterator2">
+      <AttrNames>
+        <Item Value="process1_inventoryOrg"/>
       </AttrNames>
       <ListAttrNames>
         <Item Value="element"/>

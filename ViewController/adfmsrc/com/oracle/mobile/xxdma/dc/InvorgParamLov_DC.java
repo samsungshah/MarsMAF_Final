@@ -16,42 +16,41 @@ import oracle.adfmf.framework.exception.AdfInvocationException;
 import oracle.adfmf.framework.model.AdfELContext;
 import oracle.adfmf.util.GenericType;
 
-public class OuParamLov_DC {
-    public OuParamLov_DC() {
+public class InvorgParamLov_DC {
+    public InvorgParamLov_DC() {
         super();
     }
-    private static List s_ouList = new ArrayList();
+    private static List s_orgList = new ArrayList();
     String OuList[] = null;
-
     public void AddOU(String l) {
-        s_ouList.add(l);
-        System.out.println("String Added to List s_ouList" + l);
+        s_orgList.add(l);
+        System.out.println("String Added to List s_orgList" + l);
     }
 
     public String[] getOuList() {
-        if (OuList == null) {
+        if(OuList == null){    
             try {
-                System.out.println("Calling ProcessOU");
-//                AddOU("Select");
-                ProcessOU();
-            } catch (AdfInvocationException ex) {
+            System.out.println("Calling ProcessOU");
+             AddOU("");   
+            ProcessOU();
+        } catch (AdfInvocationException ex) {
 
-                AdfException e = new AdfException("Error Invoking getOuList", AdfException.WARNING);
-                System.out.println("Error Invoking getOuList");
+            AdfException e = new AdfException("Error Invoking getOuList", AdfException.WARNING);
+            System.out.println("Error Invoking getOuList");
 
-            }
-            OuList = (String[]) s_ouList.toArray(new String[s_ouList.size()]);
-            System.out.println("getOuList complete");
         }
-
+        OuList = (String[]) s_orgList.toArray(new String[s_orgList.size()]);
+        System.out.println("getOuList complete");
+        }
+        
         System.out.println("Inside getOuList");
-
+       
         return OuList;
     }
 
     public void ProcessOU() throws AdfInvocationException {
-
-
+        
+        
         List pnames = new ArrayList();
         List pvals = new ArrayList();
         List ptypes = new ArrayList();
@@ -59,65 +58,53 @@ public class OuParamLov_DC {
         ValueExpression ve = null;
         TransactionHeaderLov payloadTH = new TransactionHeaderLov();
         WSPayload payload = new WSPayload();
-
+ 
         payloadTH.setCallingSystemName("MAF");
         payloadTH.setCallingInterfaceName("GL");
         payloadTH.setDebugFlag("Y");
-        //
+        
         ve = AdfmfJavaUtilities.getValueExpression("#{pageFlowScope.UserId}", String.class);
         String userId = (String) ve.getValue(AdfmfJavaUtilities.getAdfELContext());
         payloadTH.setUserId(userId);
-
+        
         ve = AdfmfJavaUtilities.getValueExpression("#{pageFlowScope.RespId}", String.class);
         String respId = (String) ve.getValue(AdfmfJavaUtilities.getAdfELContext());
         payloadTH.setRespId(respId);
-
+        
         ve = AdfmfJavaUtilities.getValueExpression("#{pageFlowScope.ApplnId}", String.class);
         String applnId = (String) ve.getValue(AdfmfJavaUtilities.getAdfELContext());
         payloadTH.setRespAppId(applnId);
-        //        payloadTH.setUserId("1261");
-        //        payloadTH.setRespId("50637");
-        //        payloadTH.setRespAppId("101");
-        //
+     //   payloadTH.setUserId("1261");
+     //   payloadTH.setRespId("50637");
+      //  payloadTH.setRespAppId("101");
+        
         payload.setTransactionHeader(payloadTH);
-
-        GenericType payloadGT =
-            GenericTypeBeanSerializationHelper.toGenericType("OuParamLov_WL.Types.process.TransactionHeader",
-                                                             payloadTH);
-
+        
+        GenericType payloadGT =  GenericTypeBeanSerializationHelper.toGenericType("InvorgParamLov_WL.Types.process.TransactionHeader", payloadTH);
+        
         pnames.add("TransactionHeader");
         ptypes.add(GenericType.class);
         pvals.add(payloadGT);
 
         try {
             resultGT =
-                (GenericType) AdfmfJavaUtilities.invokeDataControlMethod("OuParamLov_WL", null, "process", pnames,
+                (GenericType) AdfmfJavaUtilities.invokeDataControlMethod("InvorgParamLov_WL", null, "process", pnames,
                                                                          pvals, ptypes);
-//            resultGT = resultGT.getParent();
-            Object provider = AdfmfJavaUtilities.getDataControlProvider("OuParamLov_WL");
+            resultGT = resultGT.getParent();
+            Object provider = AdfmfJavaUtilities.getDataControlProvider("InvorgParamLov_WL");
             GenericTypeBeanSerializationHelper.fromGenericType(provider, resultGT);
+            
+            for (int i = 0; i < resultGT.getAttributeCount(); i++) {
+                GenericType entityGenericType = (GenericType) resultGT.getAttribute(i);
+                
+                for(int j = 0; j< entityGenericType.getAttributeCount(); j++) {
+                    GenericType entityGenericType1 = (GenericType) entityGenericType.getAttribute(j);
+                     Object OuName =entityGenericType1.getAttribute(0);
+                    AddOU(OuName.toString());
+                }
 
-                        for (int i = 0; i < (resultGT.getAttributeCount() - 1); i++) {
-                            GenericType entityGenericType = (GenericType) resultGT.getAttribute(i);
-                            AddOU(entityGenericType.getAttribute(0).toString());
-//                            GenericType entityGenericType1 = (GenericType) entityGenericType.getAttribute(0);
-//                            for(int j = 0; j< entityGenericType1.getAttributeCount(); j++) {
-//            
-//                                 Object OuName =entityGenericType1.getAttribute(j);
-//                                AddOU(OuName.toString());
-//            
-//                            }
-//            
-                        }
-//            for (int i = 0; i < resultGT.getAttributeCount(); i++) {
-//                GenericType entityGenericType = (GenericType) resultGT.getAttribute(i);
-//                GenericType entityGenericType1 = (GenericType) entityGenericType.getAttribute(j);
-//                for (int j = 0; j < entityGenericType.getAttributeCount(); j++) {
-//                  
-//                    Object OuName = entityGenericType1.getAttribute(0);
-//                    AddOU(OuName.toString());
-//                }
-//            }
+                 
+            }
 
         } catch (AdfInvocationException ex) {
 

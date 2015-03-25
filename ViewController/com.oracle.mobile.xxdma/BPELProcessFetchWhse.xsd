@@ -5,7 +5,6 @@
     <complexType>
       <sequence>
         <element name="TransactionHeader" type="cmn:TransactionHeaderType"/>
-        <element name="operatingUnit" type="string"/>
       </sequence>
     </complexType>
   </element>
