@@ -11,14 +11,14 @@
     <amx:facet name="secondary">
     </amx:facet>
     <amx:panelFormLayout id="pfl1">
-      <amx:inputText value="#{bindings.CallingSystemName.inputValue}"
-                     label="#{bindings.CallingSystemName.hints.label}" id="it9"/>
-      <amx:inputText value="#{bindings.CallingInterfaceName.inputValue}"
-                     label="#{bindings.CallingInterfaceName.hints.label}" id="it10"/>
-      <amx:inputText value="#{bindings.DebugFlag.inputValue}" label="#{bindings.DebugFlag.hints.label}" id="it4"/>
-      <amx:inputText value="#{bindings.UserId.inputValue}" label="#{bindings.UserId.hints.label}" id="it8"/>
-      <amx:inputText value="#{bindings.RespId.inputValue}" label="#{bindings.RespId.hints.label}" id="it2"/>
-      <amx:inputText value="#{bindings.RespApplId.inputValue}" label="#{bindings.RespApplId.hints.label}" id="it6"/>
+      <amx:inputText value="MAF"
+                     label="#{bindings.CallingSystemName.hints.label}" id="it9" rendered="false"/>
+      <amx:inputText value="ONT"
+                     label="#{bindings.CallingInterfaceName.hints.label}" id="it10" rendered="false"/>
+      <amx:inputText value="Y" label="#{bindings.DebugFlag.hints.label}" id="it4" rendered="false"/>
+      <amx:inputText value="1261" label="#{bindings.UserId.hints.label}" id="it8" rendered="false"/>
+      <amx:inputText value="50677" label="#{bindings.RespId.hints.label}" id="it2" rendered="false"/>
+      <amx:inputText value="660" label="#{bindings.RespApplId.hints.label}" id="it6" rendered="false"/>
       <!--<amx:inputText value="#{bindings.Warehouse.inputValue}" label="#{bindings.Warehouse.hints.label}" id="it3"/>-->
       <amx:selectOneChoice value="#{bindings.Warehouse1.inputValue}" label="#{bindings.Warehouse1.label}" id="soc3">
         <amx:selectItems value="#{bindings.Warehouse1.items}" id="si3"/>
