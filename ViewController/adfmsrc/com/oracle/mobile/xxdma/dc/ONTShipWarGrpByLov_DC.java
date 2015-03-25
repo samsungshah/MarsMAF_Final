@@ -19,31 +19,31 @@ public class ONTShipWarGrpByLov_DC {
         super();
     }
         private static List s_orgList = new ArrayList();
-        String OuList[] = null;
+        String ShipGrpByList[] = null;
         public void AddOU(String l) {
             s_orgList.add(l);
             System.out.println("String Added to List s_orgList" + l);
         }
 
-        public String[] getOuList() {
-            if(OuList == null){    
+        public String[] getShipGrpByList() {
+            if(ShipGrpByList == null){    
                 try {
                 System.out.println("Calling ProcessOU");
                  AddOU("");   
                 ProcessOU();
             } catch (AdfInvocationException ex) {
 
-                AdfException e = new AdfException("Error Invoking getOuList", AdfException.WARNING);
-                System.out.println("Error Invoking getOuList");
+                AdfException e = new AdfException("Error Invoking getShipGrpByList", AdfException.WARNING);
+                System.out.println("Error Invoking getShipGrpByList");
 
             }
-            OuList = (String[]) s_orgList.toArray(new String[s_orgList.size()]);
-            System.out.println("getOuList complete");
+            ShipGrpByList = (String[]) s_orgList.toArray(new String[s_orgList.size()]);
+            System.out.println("getShipGrpByList complete");
             }
             
-            System.out.println("Inside getOuList");
+            System.out.println("Inside getShipGrpByList");
            
-            return OuList;
+            return ShipGrpByList;
         }
 
         public void ProcessOU() throws AdfInvocationException {
