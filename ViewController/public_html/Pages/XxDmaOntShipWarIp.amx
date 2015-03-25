@@ -23,10 +23,12 @@
       <amx:inputText value="#{bindings.BucketDays.inputValue}" label="#{bindings.BucketDays.hints.label}" id="it5">
         <amx:convertNumber groupingUsed="false" id="cn1"/>
       </amx:inputText>
-      <amx:inputText value="#{bindings.OperatingUnit.inputValue}" label="#{bindings.OperatingUnit.hints.label}"
-                     id="it1"/>
-      <amx:selectOneChoice value="#{bindings.GroupBy1.inputValue}" label="#{bindings.GroupBy1.label}" id="soc1">
+         <amx:selectOneChoice value="#{bindings.GroupBy1.inputValue}" label="#{bindings.GroupBy1.label}" id="soc1">
         <amx:selectItems value="#{bindings.GroupBy1.items}" id="si1"/>
+      </amx:selectOneChoice>
+      <amx:selectOneChoice value="#{bindings.OperatingUnit1.inputValue}" label="#{bindings.OperatingUnit1.label}"
+                           id="soc2">
+        <amx:selectItems value="#{bindings.OperatingUnit1.items}" id="si2"/>
       </amx:selectOneChoice>
       <!-- <amx:inputText value="#{bindings.GroupBy.inputValue}" label="#{bindings.GroupBy.hints.label}" id="it7"/>-->
     </amx:panelFormLayout>
