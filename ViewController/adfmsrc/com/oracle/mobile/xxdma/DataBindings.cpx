@@ -31,6 +31,7 @@
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="ONTShipWaByWarLov_WL" path="com.oracle.mobile.xxdma.ONTShipWaByWarLov_WL"/>
+    <dc id="ONTShipWaByWarLov_DC" path="com.oracle.mobile.xxdma.ONTShipWaByWarLov_DC"/>
     <dc id="ONTShipWarGrpByLov_DC" path="com.oracle.mobile.xxdma.ONTShipWarGrpByLov_DC"/>
     <dc id="ONTShipWarGrpByLov_WL" path="com.oracle.mobile.xxdma.ONTShipWarGrpByLov_WL"/>
     <dc id="ONTShipWarRpt_WL" path="com.oracle.mobile.xxdma.ONTShipWarRpt_WL"/>

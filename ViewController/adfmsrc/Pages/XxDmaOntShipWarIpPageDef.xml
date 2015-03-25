@@ -25,6 +25,9 @@
     <iterator Binds="root" RangeSize="25" DataControl="OuParamLov_DC" id="OuParamLov_DCIterator"/>
     <accessorIterator id="ouListIterator1" MasterBinding="OuParamLov_DCIterator" Binds="ouList" RangeSize="-1"
                       DataControl="OuParamLov_DC" BeanClass="java.lang.String"/>
+    <iterator Binds="root" RangeSize="25" DataControl="ONTShipWaByWarLov_DC" id="ONTShipWaByWarLov_DCIterator"/>
+    <accessorIterator id="shipWarListIterator" MasterBinding="ONTShipWaByWarLov_DCIterator" Binds="shipWarList"
+                      RangeSize="-1" DataControl="ONTShipWaByWarLov_DC" BeanClass="java.lang.String"/>
   </executables>
   <bindings>
     <methodAction id="process" RequiresUpdateModel="true" Action="invokeMethod" MethodName="process"
@@ -114,6 +117,18 @@
           StaticList="false" ListIter="ouListIterator1">
       <AttrNames>
         <Item Value="process_OperatingUnit"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="element"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="element"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="Warehouse1" DTSupportsMRU="true" SelectItemValueMode="ListObject"
+          StaticList="false" ListIter="shipWarListIterator">
+      <AttrNames>
+        <Item Value="process_Warehouse"/>
       </AttrNames>
       <ListAttrNames>
         <Item Value="element"/>
